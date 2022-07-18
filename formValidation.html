@@ -10,47 +10,49 @@
 </head>
 
 <body>
-    <div>
-        <h1 class="formHeading">Registration Form</h1>
-        <form method="get">
-            <label for="userID">User ID:</label>
-            <input type="text" id="userID" name="user_ID" required><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="user_password" required><br>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="user_name" required><br>
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="user_address" optional><br>
-            <label for="country">Country:</label>
-            <select id="country" name="country" required>
-                <option value="South Africa">South Africa</option>
-                <option value="South Africa">Namibia</option>
-                <option value="South Africa">Botswana</option>
-                <option value="South Africa">Mozambique</option>
-                <option value="South Africa">Swaziland</option>
-            </select><br>
-            <label for="zipCode" id="zipCode" name="user_zip">ZIP Code:</label>
-            <input type="number" id="zipCode" name="user_zip" required><br>
-            <label for="email" id="email" name="user_email">Email:</label>
-            <input type="email" id="email" name="user_email" required><br>
-            <label for="gender">Sex:</label>
-            <input type="radio" id="gender" name="gender" required>Male</input>
-            <input type="radio" id="gender" name="gender" required>Female</input>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <h1 class="formHeading">Registration Form</h1>
+    <div class="formStyle">    
+        <form id="testForm" method="post">
+            <div class="form"><label for="userID">User ID:</label>
+                <input type="text" id="userID" name="user_ID" pattern="[A-Za-z.]{5,12}" title="5 to 12 characters allowed" required>
+            </div><br>
+            <div class="form"><label for="password">Password:</label>
+                <input type="password" id="password" name="user_password" pattern=".{7,12}" title="7 to 12 characters allowed" required>
+            </div><br>
+            <div class="form"><label for="name">Name:</label>
+                <input type="text" id="name" name="user_name" pattern="[A-Za-z]+" title="Letters only" required>
+            </div><br>
+            <div class="form"><label for="address">Address:</label>
+                <input type="text" id="address" name="user_address" optional>
+            </div><br>
+            <div class="form"><label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="South Africa">South Africa</option>
+                    <option value="South Africa">Namibia</option>
+                    <option value="South Africa">Botswana</option>
+                    <option value="South Africa">Mozambique</option>
+                    <option value="South Africa">Swaziland</option>
+                </select>
+            </div><br>
+            <div class="form"><label for="zipCode" id="zipCode" name="user_zip">ZIP Code:</label>
+                <input type="number" id="zipCode" name="user_zip" pattern="[0-9]+" title="Numbers only" required>
+            </div><br>
+            <div class="form"><label for="email" id="email" name="user_email">Email:</label>
+                <input type="email" id="email" name="user_email" title="Valid addresses only" required>
+            </div><br>
+            <div class="form"><label for="gender">Sex:</label>
+                <input type="radio" id="gender" name="gender" required>Male</input>
+                <input type="radio" id="gender" name="gender" required>Female</input>
+            </div><br>
+            <div class="form"><label for="language" required>Language:</label>
+                <input type="checkbox" id="language" name="language">English</input>
+                <input type="checkbox" id="language" name="language">Non English</input>
+            </div><br>
+            <div class="form"><label for="aboutarea">About:</label>
+                <textarea id="aboutarea" name="aboutarea" rows="3" cols="40" form="testForm"></textarea>
+            </div><br>
+            <div class="formSubmit"><input type="submit" id="submit" name="submit" value="Submit!"></input></div>
         </form>
-
     </div>
 </body>
 
